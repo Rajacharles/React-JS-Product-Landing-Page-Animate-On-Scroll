@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+// import animate on scroll
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
+// import components
+import Hero from './components/Hero';
+import About from './components/About';
+import Features from './components/Features';
+import Testimonials from './components/Testimonials';
+import CtaSection from './components/CtaSection';
+import Footer from './components/Footer';
+
+const App = () => {
+  // animate on scroll initialization
+  Aos.init({
+    duration: 1800,
+    offset: 0,
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='overflow-hidden'>
+      <Hero />
+      <About />
+      <Features />
+      <Testimonials />
+      <CtaSection />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
